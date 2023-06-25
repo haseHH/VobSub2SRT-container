@@ -6,5 +6,11 @@ The [VobSub2SRT](https://github.com/ruediger/VobSub2SRT) command line tool is st
 
 ```bash
 docker build --tag vobsub2srt:v1.0pre7 .
-docker run -it --rm vobsub2srt:v1.0pre7 /bin/bash
+docker run -it --rm -v .:/workspace vobsub2srt:v1.0pre7 /bin/bash
+```
+
+Place your identically named `.idx` and `.sub` files in the mounted path (e.g. `.`) and execute the command below. Replace the filename and the `eng` language code if needed.
+
+```bash
+vobsub2srt --tesseract-lang eng "subtitle-file-name-without-extension"
 ```
