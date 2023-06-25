@@ -7,7 +7,7 @@ RUN sed -i -re 's/([a-z]{2}\.)?archive.ubuntu.com|security.ubuntu.com/old-releas
 # get as up to date as we can
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get upgrade -y && apt-get autoremove -y
-RUN apt-get install -y libtesseract-dev tesseract-ocr-eng build-essential cmake pkg-config
+RUN apt-get install -y libtesseract-dev tesseract-ocr-* build-essential cmake pkg-config
 
 # get libtiff5-dev and its dependencies' packages that are not in the 'precise' repos from Ubuntu 14.04 Trusty Tahr
 ADD http://security.ubuntu.com/ubuntu/pool/main/j/jbigkit/libjbig0_2.0-2ubuntu4_amd64.deb /src/libjbig0.deb
